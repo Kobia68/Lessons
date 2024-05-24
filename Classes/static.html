@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Square {
+            constructor (_width) {
+                this.width = _width;
+                this.height = _width;
+            }
+
+            get area () {
+                return this.width * this.height;
+            }
+
+            set area (area) {
+                this.width = Math.sqrt(area);
+                this.height = this.width;
+            }
+
+            static checkEquality (a, b) {
+                return a.area === b.area
+            } 
+        }
+
+        let square1 = new Square(6);
+        let square2 = new Square(6);
+        square1.area = 36;
+
+        // console.log(Square.checkEquality(square1, square2))
+
+        console.log(square1.width)
+    </script>
+    
+</body>
+</html>

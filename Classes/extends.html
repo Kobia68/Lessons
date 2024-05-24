@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Person {
+            constructor (_name, _age) {
+                this.name = _name;
+                this.age = _age;
+            }
+
+            describe () {
+                return `Hello my name is ${this.name} and I am ${this.age} years old`;
+            }
+        }
+
+        class Programmer extends Person {
+            constructor (_name, _age, _yearsOfExperience) {
+                super(_name, _age);
+                this.yearsOfExperience = _yearsOfExperience;
+            }
+
+            develop () {
+                console.log( `My name is ${this.name}, I am ${this.age} years old and I have ${this.yearsOfExperience} years of experience`)
+            }
+        }
+
+        const programmers = [
+            new Programmer('John', 45, 20),
+            new Programmer('Erick', 28, 5)
+        ]
+
+        function code (programmers) {
+            for (let programmer of programmers) {
+                programmer.develop();
+            }
+        }
+
+        code(programmers);
+
+        
+    </script>
+    
+</body>
+</html>

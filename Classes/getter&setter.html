@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    class Square {
+        constructor (_width) {
+        this.width = _width;
+        this.height = _width;
+        this.numbOfGettersCalled = 0; 
+        }
+
+        get area () {
+            this.numbOfGettersCalled ++
+            return this.width * this.height;
+        }
+
+        set area (area) {
+            this.width = Math.sqrt(area);
+            this.height = this.width;
+        }
+
+
+    }
+
+    let mySquare1 = new Square(4);
+    mySquare1.area = 121;
+
+    console.log(mySquare1.area)
+    console.log(mySquare1.area)
+    console.log(mySquare1.area)
+    console.log(mySquare1.area)
+    console.log(mySquare1.area)
+
+    console.log(mySquare1.numbOfGettersCalled)
+
+    </script>
+    
+</body>
+</html>
+
+
+

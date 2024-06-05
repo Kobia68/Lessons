@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let stocks = {
+    fruits:['strawberry', 'mango', 'orange'],
+    liquids: ['water', 'ice'],
+    holder: ['cone', 'cup', 'stick'],
+    toppings: ['chocolate', 'peanuts']
+}
+
+let is_shop_open = true;
+
+let order = ()=> {
+    return new Promise ((resolve, reject)=> {
+        setTimeout(()=> {
+            resolve(console.log('What topping would you like on your icecream?'))
+        }, 3000)
+    })
+}
+
+async function kitchen (ms) {
+    try {
+        console.log('A')
+        console.log('B')
+        console.log('C')
+
+        await order();
+
+        console.log('D')
+        console.log('E')
+    }
+    catch(error) {
+        console.log('Our shop is currently closed.')
+    }
+}
+
+kitchen();
+
+console.log('Taking orders')
+console.log('Directing customers')
+console.log('Doing the dishes')
+
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    let stocks = {
+        fruits : ['mango', 'orange', 'strawberry'],
+        liquids : ['water', 'ice'],
+        holder : ['cone', 'cup', 'stick'],
+        toppings : ['chocolate', 'peanuts']
+    }
+
+    let is_shop_open = true;
+
+    let order = (time, work)=> {
+        return new Promise ((resolve, reject)=> {
+            if (is_shop_open) {
+                setTimeout(()=>{
+                    resolve(work());
+                },time)
+            }
+            else {
+               reject(console.log('Sorry, our shop is currently closed')) 
+            }})
+    }
+
+    order(2000, ()=>console.log(`${stocks.fruits[2]} has been selected, start production`))
+    
+    .then (()=>{
+        return order(1000, ()=>console.log('Fruits have been chopped'))
+    })
+
+    .then (()=> {
+        return order (1000, ()=>console.log(`${stocks.liquids[1]} has been added`))
+    })
+
+    .then (()=>{
+        return order (1000, ()=> console.log(`The icecream has been placed on the ${stocks.holder[1]}`))
+    })
+
+    .then (()=> {
+        return order (1000, ()=>console.log(`Add ${stocks.toppings[1]} as topping`))
+    })
+
+    .then (()=> {
+        return order (1000, ()=>console.log('Ice cream is ready to be served'))
+    })
+
+
+
+
+</script>
+    
+</body>
+</html>

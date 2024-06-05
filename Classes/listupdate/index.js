@@ -18,7 +18,7 @@ class ListElement {
             this.listElements.removeChild(this.listElements.firstChild)
         }
 
-        for (const text of this.listItems) {
+        for (let text of this.listItems) {
             this.listElements.appendChild(ListElement.createElement(text))
         }
     }
